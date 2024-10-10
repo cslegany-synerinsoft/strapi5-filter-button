@@ -1,6 +1,6 @@
 {
   "name": "@cslegany/filter-button-strapi5",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "This package provides a custom field for Strapi 5 that lets you add a filter button in no time.",
   "strapi": {
     "kind": "plugin",
