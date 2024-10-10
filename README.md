@@ -18,6 +18,7 @@ Yarn:
 - If you click on this button, it will show all Articles belonging to that Category using Strapi's Content Manager.
 - Multi-to-Multi relations are also supported. Let's say that you have a Labels relation and each Article can have multiple Labels. In that case you have to set Multi-to-Multi in the configuration of this plugin.
 - This plugin has a GUI to configure relations which was a missing feature in the Strapi 4 version.
+- Don't forget to add the Custom Fields in Strapi to your relations (i.e. a viewArticles custom field to Categories). 
 
 ## License
 
