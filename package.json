@@ -11,6 +11,12 @@
   "keywords": ["Filter Button", "Strapi 5"],
   "license": "MIT",
   "type": "commonjs",
+  "files": [
+    "admin",
+    "server",
+    "strapi-admin.ts",
+    "strapi-server.ts"
+  ],
   "dependencies": {
     "@strapi/design-system": "^2.0.0-rc.11",
     "@strapi/icons": "^2.0.0-rc.11",
