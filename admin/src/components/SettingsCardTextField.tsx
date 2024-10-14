@@ -3,11 +3,12 @@ import {
     Flex,
     Field,
     TextInput,
+    Box,
 } from '@strapi/design-system';
 import { useIntl } from "react-intl";
 import { getTranslation as getTrad } from '../utils/getTranslation';
-import SettingsTooltip from './SettingsTooltip';
 import { Information } from '@strapi/icons';
+import TooltipIconButton from './TooltipIconButton';
 
 interface SettingsCardTextFieldProps {
     index: number,
@@ -21,6 +22,7 @@ interface SettingsCardTextFieldProps {
 const SettingsCardTextField = ({ index, name, placeholder, required, value, updateItem }: SettingsCardTextFieldProps) => {
     const { formatMessage } = useIntl();
     const [hasError, setHasError] = useState(false);
+    const tooltip = formatMessage({ id: getTrad(`plugin.settings.${name}.tooltip`) });
 
     const onItemChange = (newValue: string) => {
         setHasError(required && !newValue);
@@ -41,9 +43,11 @@ const SettingsCardTextField = ({ index, name, placeholder, required, value, upda
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => onItemChange(e.target.value)}
                     value={value}
                 />
-                <SettingsTooltip tooltip={`plugin.settings.${name}.tooltip`}>
-                    <Information />
-                </SettingsTooltip>
+                <Box marginLeft={2}>
+                    <TooltipIconButton label={tooltip} showBorder={true} variant='ghost'>
+                        <Information />
+                    </TooltipIconButton>
+                </Box>
             </Flex>
             <Field.Hint />
             <Field.Error />
