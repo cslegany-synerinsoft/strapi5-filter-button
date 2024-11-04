@@ -38,7 +38,6 @@ const Settings = () => {
         setIsSaving(true);
 
         const res = await post(`/filter-button/settings`, {
-            method: 'POST',
             body: settings
         });
         setSettings(res.data.body);
