@@ -45,9 +45,9 @@ export default ({ strapi }: { strapi: Core.Strapi }) => ({
 
     async getSettings() {
         const pluginStore = getPluginStore();
-        let config = await pluginStore.get({ key: 'settings' });
-        if (!config) {
-            config = await createDefaultConfig();
+        let config = await pluginStore.get({ key: 'settings' }) as PluginSettingsResponse;
+        if (!config || !config.body) {
+            config = (await createDefaultConfig()) as PluginSettingsResponse;
         }
         return config;
     },
